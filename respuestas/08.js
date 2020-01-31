@@ -1,173 +1,115 @@
-/*
-    Dado el siguiente array de meses del año:
+// 1
 
-        ```javascript
-        var meses = [
-            'Enero', // índice `0`
-            'Febrero',
-            'Marzo',
-            'Abril',
-            'Mayo',
-            'Junio',
-            'Julio',
-            'Agosto',
-            'Septiembre',
-            'Octubre',
-            'Noviembre',
-            'Diciembre'  // índice 11, equivalente a `meses.length - 1`
-        ];
-        ```
+let nombreEmpresaUno = "Empresa1";
+let saludoEmpresaUno = "Buenas tardes, muchas gracias por adquirir su torta.";
 
-        Escribir un programa que:
+let nombreEmpresaDos = "Empresa2";
+let saludoEmpresaDos = "¡Hola! Muy buena onda que compren tortas ;D";
 
-        1. Declare y asigne una variable que tenga como valor el **_número_** del mes de tu cumpleaños.
-        1. Muestre por terminal el **_nombre_** del mes de tu cumpleaños.
-*/
+let nombreEmpresaTres = "Empresa3";
+let saludoEmpresaTres = "¡Muchas thank you!";
 
- var meses = [
-    'Enero', // índice `0`
-    'Febrero',
-    'Marzo',
-    'Abril',
-    'Mayo',
-    'Junio',
-    'Julio',
-    'Agosto',
-    'Septiembre',
-    'Octubre',
-    'Noviembre',
-    'Diciembre'  // índice 11, equivalente a `meses.length - 1`
-];
+let saludoGenérico = "¡Muchas gracias!";
 
-var numeroDelMesDeMiCumpleanos = 5;
-var nombreDelMesDeMiCumpleanos = meses[5 - 1];
+function devolverSaludo() {
+    let empresaCargadaPorUsuario = prompt("Por favor, escriba el nombre de una empresa")
 
-console.log(nombreDelMesDeMiCumpleanos);
+    if (empresaCargadaPorUsuario === nombreEmpresaUno) {
+        alert(saludoEmpresaUno)
+    } else if (empresaCargadaPorUsuario === nombreEmpresaUno) {
+        alert(saludoEmpresaDos)
+    } else if (empresaCargadaPorUsuario === nombreEmpresaUno) {
+        alert(saludoEmpresaTres)
+    } else {
+        let confirmacion = confirm("Esa empresa no existe, ¿Deseas ver un saludo genérico?");
+        if (confirmacion) {
+            alert(saludoGenérico);
+        } else {
+            devolverSaludo();
+        }
+    }
+}
 
-/*
-    Dado los siguientes arrays:
+// devolverSaludo();
 
-        ```javascript
-        var meses = [
-            'Enero',
-            'Febrero',
-            'Marzo',
-            'Abril',
-            'Mayo',
-            'Junio',
-            'Julio',
-            'Agosto',
-            'Septiembre',
-            'Octubre',
-            'Noviembre',
-            'Diciembre'
-        ];
+// 2
 
-        var planetas = [
-            'Mercurio',
-            'Venus',
-            'Tierra',
-            'Marte',
-            'Saturno',
-            'Jupiter',
-            'Urano',
-            'Neptuno',
-            'Plutón'
-        ];
-        ```
+let nombreEmpresaUno = "Empresa1";
+let saludoEmpresaUno = "Buenas tardes, muchas gracias por adquirir su torta.";
+let tortasCompradasEmpresaUno = 352;
 
-        1. Mostrar por la terminal la cantidad de elementos que tiene cada uno.
-        1. Mostrar por la terminal el último elemento de cada array (usando la propiedad `length` que tienen los arrays).
-        1. Mostrar el cuarto planeta por pantalla (`Marte`).
-*/
+let nombreEmpresaDos = "Empresa2";
+let saludoEmpresaDos = "¡Hola! Muy buena onda que compren tortas ;D";
+let tortasCompradasEmpresaUno = 470;
 
-var meses = [
-    'Enero',
-    'Febrero',
-    'Marzo',
-    'Abril',
-    'Mayo',
-    'Junio',
-    'Julio',
-    'Agosto',
-    'Septiembre',
-    'Octubre',
-    'Noviembre',
-    'Diciembre'
-]
-var planetas = [
-    'Mercurio',
-    'Venus',
-    'Tierra',
-    'Marte',
-    'Saturno',
-    'Jupiter',
-    'Urano',
-    'Neptuno',
-    'Plutón'
-];
+let nombreEmpresaTres = "Empresa3";
+let saludoEmpresaTres = "¡Muchas thank you!";
+let tortasCompradasEmpresaUno = 563;
 
-console.log(meses.length);
-console.log(planetas.length);
+let saludoGenérico = "¡Muchas gracias!";
 
-console.log(meses[meses.length - 1]);
-console.log(planetas[planetas.length - 1]);
+let tortasExtrasPedidoMinimo = 10;
+let tortasExtrasDadas = 1;
+let tortasExtrasCada = 15;
 
-console.log(planetas[3]);
+function devolverSaludo(nombreEmpresa) {
+    let empresaCargadaPorUsuario = nombreEmpresa;
+    if (!empresaCargadaPorUsuario) {
+        empresaCargadaPorUsuario = prompt("Por favor, escriba el nombre de una empresa")
+    }
 
-/*
-    1. Dado el siguiente array de nombres:
+    if (empresaCargadaPorUsuario === nombreEmpresaUno) {
+        alert(saludoEmpresaUno)
+    } else if (empresaCargadaPorUsuario === nombreEmpresaUno) {
+        alert(saludoEmpresaDos)
+    } else if (empresaCargadaPorUsuario === nombreEmpresaUno) {
+        alert(saludoEmpresaTres)
+    } else {
+        let confirmacion = confirm("Esa empresa no existe, ¿Deseas ver un saludo genérico?");
+        if (confirmacion) {
+            alert(saludoGenérico);
+        } else {
+            devolverSaludo();
+        }
+    }
+}
 
-        ```javascript
-        var nombres = ['Sofía', 'Abril'];
-        var apellidos = ['Rodriguez', 'López'];
-        ```
+function aplicarDescuentos(cantidadTortasCompradasEmpresa, monto) {
 
-        1. Mostrar por la terminal el primer elemento de cada array.
-        1. Crear un nuevo array llamado `nombreCompleto` que contenga el segundo elemento del array `nombres` y el primer elemento del array `apellidos`. Mostrar el nuevo array por la terminal.
-*/
+    let descuentoNivel1TortasNecesarias = 100;
+    let descuentoNivel1Valor = 0.10;
 
-var nombres = ['Sofía', 'Abril'];
-var apellidos = ['Rodriguez', 'López'];
+    let descuentoNivel2TortasNecesarias = 500;
+    let descuentoNivel2Valor = 0.15;
 
-console.log(nombres[0]);
-console.log(apellidos[0]);
+    if (cantidadTortasCompradasEmpresa >= descuentoNivel2TortasNecesarias) {
+        return monto - (1 - descuentoNivel2Valor);
+    } else if (cantidadTortasCompradasEmpresa >= descuentoNivel1TortasNecesarias) {
+        return monto - (1 - descuentoNivel1Valor);
+    } else {
+        return monto;
+    }
+}
 
-var nombreCompleto = [nombres[1], apellidos[0]];
-console.log(nombreCompleto);
+function devolverMontoTotal(nombreEmpresa) {
+    let empresaCargadaPorUsuario = nombreEmpresa;
+    if (!empresaCargadaPorUsuario) {
+        empresaCargadaPorUsuario = prompt("Por favor, escriba el nombre de una empresa")
+    }
 
-/*
-    1. Dado el siguiente array de participantes de una carrera y considerando que están ordenados en base al orden de llegada (el primer elemento es el primero en haber llegado):
+    let monto = Number(prompt("Por favor, escriba el valor del monto"))
 
-        ```javascript
-        var corredores = [
-            'Margarita', // ganó la carrera
-            'Juan',
-            'Raquel',
-            'Ezequiel',
-            'Gonzalo',
-            'Martina',
-            'Julian' // último 🙁
-        ];
-        ```
+    if (empresaCargadaPorUsuario === nombreEmpresaUno) {
+        alert(aplicarDescuentos(tortasCompradasEmpresaUno, monto))
+    } else if (empresaCargadaPorUsuario === nombreEmpresaDos) {
+        alert(aplicarDescuentos(tortasCompradasEmpresaDos, monto))
+    } else if (empresaCargadaPorUsuario === nombreEmpresaTres) {
+        alert(aplicarDescuentos(tortasCompradasEmpresaTres, monto))
+    } else {
+        alert(monto)
+    }
+}
 
-        1. Mostrar por la terminal los 3 primeros en llegar a la meta usando índices numéricos.
-        1. Crear un nuevo array llamado `losUltimos` que contenga los 2 últimos corredores en llegar (usando la propiedad `length` que tienen los arrays). Mostrar este nuevo array por la terminal.
-*/
-
-var corredores = [
-    'Margarita', // ganó la carrera
-    'Juan',
-    'Raquel',
-    'Ezequiel',
-    'Gonzalo',
-    'Martina',
-    'Julian' // último 🙁
-];
-
-console.log(corredores[0]);
-console.log(corredores[1]);
-console.log(corredores[2]);
-
-var losUltimos = [corredores[corredores.length - 1], corredores[corredores.length - 2]];
-console.log(losUltimos);
+let empresaCargadaPorUsuario = prompt("Por favor, escriba el nombre de una empresa")
+devolverMontoTotal(empresaCargadaPorUsuario);
+devolverSaludo(empresaCargadaPorUsuario);
